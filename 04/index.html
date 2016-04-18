@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建组件</title>
+	<script type="text/javascript" src="../build/react.js"></script>
+	<script type="text/javascript" src="../build/react-dom.js"></script>
+	<script type="text/javascript" src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="ex"></div>
+	<script type="text/babel">
+		var Testcomponent = React.createClass({
+			render: function(){
+				return <div>Hello,{this.props.name}</div>;
+			}
+		})
+		ReactDOM.render(
+			<Testcomponent name="Mars" />,
+			document.getElementById('ex')
+		)
+	</script>
+</body>
+</html>  
