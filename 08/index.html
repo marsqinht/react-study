@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>状态初始值</title>
+	<script type="text/javascript" src="../build/react.js"></script>
+	<script type="text/javascript" src="../build/react-dom.js"></script>
+	<script type="text/javascript" src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="ex"></div>
+	<script type="text/babel">
+		var My = React.createClass({
+			getInitialState:function() {
+				return {liked:false}
+			},
+			HandleClick:function(ev){
+				this.setState({liked:!this.state.liked})
+			},
+			render:function(){
+				var text = this.state.liked ? 'like' : 'haven\'t liked';
+				return (
+					<p onClick={this.HandleClick}>
+						You {text} this. Click to toggle.
+					</p>
+					)
+			}
+		})
+
+		ReactDOM.render(
+			<My/>,
+			document.getElementById('ex')
+			)
+	</script>
+</body>
+</html>  
